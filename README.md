@@ -62,9 +62,9 @@
 |                                          |                                          |
 
 
-[运行时数据区域]:https://github.com/Blankj/AndroidOfferKiller/blob/master/android/运行时数据区域.md
+[运行时数据区域]:https://github.com/Blankj/AndroidOfferKiller/blob/master/jvm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md
 
-[App 启动过程（含 Activity 启动过程）]: https://github.com/Blankj/AndroidOfferKiller/blob/master/android/App 启动过程（含 Activity 启动过程）.md
+[App 启动过程（含 Activity 启动过程）]: https://github.com/Blankj/AndroidOfferKiller/blob/30d48a03d792679ce25718aee1d0ea6d22325fdd/android/App%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%88%E5%90%AB%20Activity%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%89.md
 
 
 [Blankj]:https://github.com/Blankj
