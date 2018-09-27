@@ -8,11 +8,13 @@
 * [1 计算机基础](#1-计算机基础)
   * [1.1 数据结构](#1.1-数据结构)
   * [1.2 计算机网络](#1.2-计算机网络)
-* [2 Java](#2-Java-核心)
-* [3 Java 虚拟机](#3-Java-虚拟机)
-* [4 Android](#4-Android)
+* [2 Java](#2-java)
+* [3 Java 虚拟机](#3-java-虚拟机)
+* [4 Android](#4-android)
 * [5 设计模式](#5-设计模式)
-* [6 HR 面试](#6-HR-面试)
+* [6 HR 面试](#6-hr-面试)
+* [7 简历模板](#7-简历模板)
+* [8 内推通道](#8-内推通道)
 
 
 ### 1 计算机基础
@@ -23,7 +25,8 @@
 
 | Title                                    | Author                                   |
 | :--------------------------------------- | :--------------------------------------- |
-|                                          |                                          |
+| [LeetCode 题解][LeetCode 题解]            |  [Blankj][Blankj]                          |
+
 
 #### 1.2 计算机网络
 
@@ -31,11 +34,13 @@
 | :--------------------------------------- | :--------------------------------------- |
 |                                          |                                          |
 
+
 ### 2 Java
 
 | Title                                    | Author                                   |
 | :--------------------------------------- | :--------------------------------------- |
 |                                          |                                          |
+
 
 ### 3 Java 虚拟机
 
@@ -43,17 +48,20 @@
 | :--------------------------------------- | :--------------------------------------- |
 | [运行时数据区域][运行时数据区域]              | [Blankj][Blankj]                         |
 
+
 ### 4 Android
 
 | Title                                    | Author                                   |
 | :--------------------------------------- | :--------------------------------------- |
 | [App 启动过程（含 Activity 启动过程）][App 启动过程（含 Activity 启动过程）]| [Blankj][Blankj]|
 
+
 ### 5 设计模式
 
 | Title                                    | Author                                   |
 | :--------------------------------------- | :--------------------------------------- |
 |                                          |                                          |
+
 
 ### 6 HR 面试
 
@@ -62,9 +70,48 @@
 |                                          |                                          |
 
 
-[运行时数据区域]:https://github.com/Blankj/AndroidOfferKiller/blob/master/jvm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md
+### 7 简历模板
 
-[App 启动过程（含 Activity 启动过程）]: https://github.com/Blankj/AndroidOfferKiller/blob/30d48a03d792679ce25718aee1d0ea6d22325fdd/android/App%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%88%E5%90%AB%20Activity%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%89.md
+| Title                                    | Author                                   |
+| :--------------------------------------- | :--------------------------------------- |
+| [技术人员的 Markdown 简历][技术人员的 Markdown 简历]  | [Blankj][Blankj]                         |
+
+### 8 内推通道
+
+| Title                                    | Author                                   |
+| :--------------------------------------- | :--------------------------------------- |
+| [阿里巴巴][阿里巴巴]                       |  blankj@qq.com                           |
+| [51 信用卡][51 信用卡]                     |  blankj@qq.com                           |
+| [二维火][二维火]                           |  blankj@qq.com                           |
+| [亿咖通科技][亿咖通科技]                    |  blankj@qq.com                           |
+
 
 
 [Blankj]:https://github.com/Blankj
+
+
+<!-- 1.1 -->
+[LeetCode 题解]: https://github.com/Blankj/awesome-java-leetcode
+
+<!-- 1.2 -->
+
+<!-- 2 -->
+
+<!-- 3 -->
+[运行时数据区域]:https://github.com/Blankj/AndroidOfferKiller/blob/master/jvm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md
+
+<!-- 4 -->
+[App 启动过程（含 Activity 启动过程）]: https://github.com/Blankj/AndroidOfferKiller/blob/30d48a03d792679ce25718aee1d0ea6d22325fdd/android/App%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%88%E5%90%AB%20Activity%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%89.md
+
+<!-- 5 -->
+
+<!-- 6 -->
+
+<!-- 7 -->
+[技术人员的 Markdown 简历]: https://github.com/Blankj/resume
+
+<!-- 8 -->
+[阿里巴巴]: https://www.alibabagroup.com
+[51 信用卡]: https://www.u51.com
+[二维火]: https://www.2dfire.com
+[亿咖通科技]: http://www.ecarx.com.cn
