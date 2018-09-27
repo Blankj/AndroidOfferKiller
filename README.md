@@ -14,7 +14,8 @@
 * [5 设计模式](#5-设计模式)
 * [6 HR 面试](#6-hr-面试)
 * [7 简历模板](#7-简历模板)
-* [8 内推通道](#8-内推通道)
+* [8 面经集合](#8-面经集合)
+* [9 内推通道](#9-内推通道)
 
 
 ### 1 计算机基础
@@ -76,9 +77,16 @@
 | :--------------------------------------- | :--------------------------------------- |
 | [技术人员的 Markdown 简历][技术人员的 Markdown 简历]  | [Blankj][Blankj]                         |
 
-### 8 内推通道
+### 8 面经集合
 
-| Title                                    | Author                                   |
+| Title                                    | Author                                    |
+| :--------------------------------------- | :--------------------------------------- |
+| [Facebook 面经记][Facebook 面经记]         | [Blankj][Blankj]                         |
+| [阿里巴巴面经记][阿里巴巴面经记]              |[Blankj][Blankj]                          |
+
+### 9 内推通道
+
+| Company Name                             | Email                                    |
 | :--------------------------------------- | :--------------------------------------- |
 | [阿里巴巴][阿里巴巴]                       |  blankj@qq.com                           |
 | [51 信用卡][51 信用卡]                     |  blankj@qq.com                           |
@@ -88,7 +96,6 @@
 
 
 [Blankj]:https://github.com/Blankj
-
 
 <!-- 1.1 -->
 [LeetCode 题解]: https://github.com/Blankj/awesome-java-leetcode
@@ -111,6 +118,10 @@
 [技术人员的 Markdown 简历]: https://github.com/Blankj/resume
 
 <!-- 8 -->
+[Facebook 面经记]: https://blankj.com/2017/10/31/facebook-interview
+[阿里巴巴面经记]: https://blankj.com/2018/09/26/alibaba-interview
+
+<!-- 9 -->
 [阿里巴巴]: https://www.alibabagroup.com
 [51 信用卡]: https://www.u51.com
 [二维火]: https://www.2dfire.com
