@@ -55,7 +55,7 @@
 | Title                                    | Author                                   |
 | :--------------------------------------- | :--------------------------------------- |
 | [App 启动过程（含 Activity 启动过程）][App 启动过程（含 Activity 启动过程）]| [Blankj][Blankj]|
-| [RecyclerView 性能优化）][RecyclerView 性能优化]| [Blankj][Blankj]|
+| [RecyclerView 性能优化][RecyclerView 性能优化]| [Blankj][Blankj]|
 
 
 ### 5 设计模式
@@ -112,7 +112,7 @@
 
 <!-- 4 -->
 [App 启动过程（含 Activity 启动过程）]: https://github.com/Blankj/AndroidOfferKiller/blob/30d48a03d792679ce25718aee1d0ea6d22325fdd/android/App%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%88%E5%90%AB%20Activity%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%89.md
-[RecyclerView 性能优化）]: https://github.com/Blankj/AndroidOfferKiller/blob/cff6e99919e5212981a8e5169c54e0de233bd021/android/RecyclerView%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md
+[RecyclerView 性能优化]: https://github.com/Blankj/AndroidOfferKiller/blob/cff6e99919e5212981a8e5169c54e0de233bd021/android/RecyclerView%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md
 
 <!-- 5 -->
 [单例模式]: https://blankj.com/2016/04/21/really-use-singleton
