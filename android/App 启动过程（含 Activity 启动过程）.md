@@ -624,3 +624,8 @@ public Activity newActivity(Class<?> clazz, Context context,
 到此为止，一个 App 的启动过程已分析结束，最后献上启动涉及到的类的流程图：
 
 ![App 的启动流程图](http://ww1.sinaimg.cn/large/b75b8776gy1fulx2ikj15j20ia0o6mxs.jpg)
+
+
+## 结语
+
+我正在打造一个帮助 Android 开发者们拿到更好 offer 的面试库————[安卓 offer 收割基](https://github.com/Blankj/AndroidOfferKiller)，欢迎 star，觉得不错的可以持续关注，有兴趣的可以一起加入进来和我一同打造。
