@@ -1,4 +1,4 @@
-## App 启动过程（含 Activity 启动过程）
+# App 启动过程（含 Activity 启动过程）
 
 1. Launcher 捕获点击事件，其过程为 `Launcher#onClick` -> `Launcher#onClickAppShortcut` -> `Launcher#startAppShortcutOrInfoActivity` -> `Launcher#startActivitySafely` -> `Activity#startActivity`，其 Launcher3 相关源码如下所示：
 
