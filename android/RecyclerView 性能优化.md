@@ -1,5 +1,7 @@
 # RecyclerView 性能优化
 
+阿里四面有三面都问了这个问题，在此做了整理，希望可以帮助到大家，欢迎查漏补缺。
+
 ## 数据处理和视图加载分离
 
 我们知道，从远端拉取数据肯定是要放在异步的，在我们拉取下来数据之后可能就匆匆把数据丢给了 VH 处理，其实，数据的处理逻辑我们也应该放在异步处理，这样 Adapter 在 notify change 后，ViewHolder 就可以简单无压力地做数据与视图的绑定逻辑，比如：
@@ -43,7 +45,7 @@ mTextView.setText(Html.fromHtml(data).toString());
 
 * 设置 `RecyclerView.addOnScrollListener(listener);` 来对滑动过程中停止加载的操作。
 
-* 如果不要求动画，可以通过 `((SimpleItemAnimator) rv.getItemAnimator()).setSupportsChangeAnimations(false);` 把默认动画关闭来提神效率。
+* 如果不要求动画，可以通过 `((SimpleItemAnimator) rv.getItemAnimator()).setSupportsChangeAnimations(false);` 把默认动画关闭来提升效率。
 
 * 对 `TextView` 使用 `String.toUpperCase` 来替代 `android:textAllCaps="true"`。
 

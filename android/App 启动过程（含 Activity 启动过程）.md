@@ -1,5 +1,7 @@
 # App 启动过程（含 Activity 启动过程）
 
+这道题在曾经面试「菜鸟网络」中遇到过，不过当时只问了「Activity 启动过程」，这里对整个「App 启动过程」进行完整的源码分析，希望可以帮助到大家。
+
 1. Launcher 捕获点击事件，其过程为 `Launcher#onClick` -> `Launcher#onClickAppShortcut` -> `Launcher#startAppShortcutOrInfoActivity` -> `Launcher#startActivitySafely` -> `Activity#startActivity`，其 Launcher3 相关源码如下所示：
 
 ```java
