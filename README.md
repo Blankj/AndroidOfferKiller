@@ -63,7 +63,7 @@
 | Title                                    | Author                                   |
 | :--------------------------------------- | :--------------------------------------- |
 | [单例模式][单例模式]                        | [Blankj][Blankj]                         |
-| [责任链模式][责任链模式]                        | [AndroidTraveler][AndroidTraveler]                         |
+| [责任链模式][责任链模式]                     | [AndroidTraveler][AndroidTraveler]       |
 
 
 ### 6 HR 面试
@@ -120,7 +120,7 @@
 
 <!-- 5 -->
 [单例模式]: https://blankj.com/2016/04/21/really-use-singleton
-[责任链模式]：./design-patterns/责任链模式妙用.md
+[责任链模式]: ./design-patterns/责任链模式妙用.md
 
 <!-- 6 -->
 
