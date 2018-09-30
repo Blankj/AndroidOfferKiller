@@ -2,7 +2,9 @@
 
 这道题在曾经面试「菜鸟网络」中遇到过，不过当时只问了「Activity 启动过程」，这里对整个「App 启动过程」进行完整的源码分析，希望可以帮助到大家。
 
-1. Launcher 捕获点击事件，其过程为 `Launcher#onClick` -> `Launcher#onClickAppShortcut` -> `Launcher#startAppShortcutOrInfoActivity` -> `Launcher#startActivitySafely` -> `Activity#startActivity`，其 Launcher3 相关源码如下所示：
+## 源码分析
+
+### 1. Launcher 捕获点击事件，其过程为 `Launcher#onClick` -> `Launcher#onClickAppShortcut` -> `Launcher#startAppShortcutOrInfoActivity` -> `Launcher#startActivitySafely` -> `Activity#startActivity`，其 Launcher3 相关源码如下所示：
 
 ```java
 // https://github.com/amirzaidi/Launcher3/blob/f7951c32984036eef2f2130f21abded3ddf6160a/src/com/android/launcher3/Launcher.java#L2249
@@ -47,7 +49,7 @@ public boolean startActivitySafely(View v, Intent intent, ItemInfo item) {
 }
 ```
 
-2. 以 API 27 源码为例，说到了 `Acitvity#startActivity`，我们点击源码可以发现调用的是 `Activity#startActivityForResult`，其中调用到了 `Instrumentation#execStartActivity` 这个方法，源码如下所示：
+### 2. 以 API 27 源码为例，说到了 `Acitvity#startActivity`，我们点击源码可以发现调用的是 `Activity#startActivityForResult`，其中调用到了 `Instrumentation#execStartActivity` 这个方法，源码如下所示：
 
 ``` java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/core/java/android/app/Activity.java#4800
@@ -73,7 +75,7 @@ public void startActivityForResult(@RequiresPermission Intent intent, int reques
 }
 ```
 
-3. 在 `Instrumentation#execStartActivity` 中我们可以发现它调用了 `ActivityManager#getService()#startActivity`，其 `ActivityManager#getService()` 是采用单例，返回的是实现 `IActivityManager` 类型的 `Binder` 对象，它的具体实现是在 `ActivityManagerService` 中。
+### 3. 在 `Instrumentation#execStartActivity` 中我们可以发现它调用了 `ActivityManager#getService()#startActivity`，其 `ActivityManager#getService()` 是采用单例，返回的是实现 `IActivityManager` 类型的 `Binder` 对象，它的具体实现是在 `ActivityManagerService` 中。
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/core/java/android/app/Instrumentation.java#1578
@@ -110,7 +112,7 @@ private static final Singleton<IActivityManager> IActivityManagerSingleton =
         };
 ```
 
-4. 我们再到 `ActivityManagerService#startActivity` 查看其源码，发现其调用了 `ActivityManagerService#startActivityAsUser`，该方法又调用了 `ActivityStarter#startActivityMayWait`，源码如下所示：
+### 4. 我们再到 `ActivityManagerService#startActivity` 查看其源码，发现其调用了 `ActivityManagerService#startActivityAsUser`，该方法又调用了 `ActivityStarter#startActivityMayWait`，源码如下所示：
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java#4516
@@ -137,7 +139,7 @@ public final int startActivityAsUser(IApplicationThread caller, String callingPa
 }
 ```
 
-5. 我们查找到 `ActivityStarter#startActivityMayWait`，其间调用了 `ActivityStarter#startActivityLocked`，接着是 `ActivityStarter#startActivity`，然后是 `ActivityStarter#startActivityUnchecked`，其调用了 `ActivityStackSupervisor#resumeFocusedStackTopActivityLocked`，源码如下所示：
+### 5. 我们查找到 `ActivityStarter#startActivityMayWait`，其间调用了 `ActivityStarter#startActivityLocked`，接着是 `ActivityStarter#startActivity`，然后是 `ActivityStarter#startActivityUnchecked`，其调用了 `ActivityStackSupervisor#resumeFocusedStackTopActivityLocked`，源码如下所示：
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/services/core/java/com/android/server/am/ActivityStarter.java#673
@@ -209,7 +211,7 @@ private int startActivityUnchecked(final ActivityRecord r, ActivityRecord source
 }
 ```
 
-6. 到 `ActivityStackSupervisor#resumeFocusedStackTopActivityLocked` 中查看发现其调用了 `ActivityStack#resumeTopActivityUncheckedLocked`，然后是 `ActivityStack#resumeTopActivityInnerLocked`，接着变又回到 `ActivityStackSupervisor.java`，调用了 `ActivityStackSupervisor#startSpecificActivityLocked`，这个方法中会判断要启动 App 的进程是否存在，存在则通知进程启动 Activity，否则就先将进程创建出来，其源码如下所示：
+### 6. 到 `ActivityStackSupervisor#resumeFocusedStackTopActivityLocked` 中查看发现其调用了 `ActivityStack#resumeTopActivityUncheckedLocked`，然后是 `ActivityStack#resumeTopActivityInnerLocked`，接着变又回到 `ActivityStackSupervisor.java`，调用了 `ActivityStackSupervisor#startSpecificActivityLocked`，这个方法中会判断要启动 App 的进程是否存在，存在则通知进程启动 Activity，否则就先将进程创建出来，其源码如下所示：
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/services/core/java/com/android/server/am/ActivityStackSupervisor.java#2085
@@ -252,7 +254,7 @@ void startSpecificActivityLocked(ActivityRecord r,
 }
 ```
 
-7. 我们分析进程尚未存在的情况，因为我们后续还会再次遇到 `ActivityStackSupervisor#realStartActivityLocked`，`ActivityStackSupervisor#startSpecificActivityLocked` 中创建进程使用到的 `mService` 为 `ActivityManagerService`，我们查看 `ActivityManagerService#startProcessLocked` 的源码如下所示：
+### 7. 我们分析进程尚未存在的情况，因为我们后续还会再次遇到 `ActivityStackSupervisor#realStartActivityLocked`，`ActivityStackSupervisor#startSpecificActivityLocked` 中创建进程使用到的 `mService` 为 `ActivityManagerService`，我们查看 `ActivityManagerService#startProcessLocked` 的源码如下所示：
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java#3777
@@ -268,7 +270,7 @@ private final void startProcessLocked(ProcessRecord app, String hostingType,
 }
 ```
 
-8. 发现最终调用的事 `Process#start` 来启动进程，进程的入口就是在 `android.app.ActivityThread.java` 类中的 `main()` 函数，因此接下来我们从 `ActivityThread#main` 来分析，其调用了 `ActivityThread#attach`，其中 `ActivityManager.getService()` 之前提到过，返回的是一个是实现 `IActivityManager` 类型的 `Binder` 对象，它的具体实现是在 `ActivityManagerService` 中，相关源码如下所示：
+### 8. 发现最终调用的事 `Process#start` 来启动进程，进程的入口就是在 `android.app.ActivityThread.java` 类中的 `main()` 函数，因此接下来我们从 `ActivityThread#main` 来分析，其调用了 `ActivityThread#attach`，其中 `ActivityManager.getService()` 之前提到过，返回的是一个是实现 `IActivityManager` 类型的 `Binder` 对象，它的具体实现是在 `ActivityManagerService` 中，相关源码如下所示：
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/core/java/android/app/ActivityThread.java#6459
@@ -301,7 +303,7 @@ private void attach(boolean system) {
 }
 ```
 
-9. 我们又回到了 `ActivityManagerService` 中，查看其 `attachApplication` 函数，发现调用了 `thread#bindApplication` 和 `mStackSupervisor#attachApplicationLocked` 我们依次讲解这两个方法要做的事情，源码如下所示：
+### 9. 我们又回到了 `ActivityManagerService` 中，查看其 `attachApplication` 函数，发现调用了 `thread#bindApplication` 和 `mStackSupervisor#attachApplicationLocked` 我们依次讲解这两个方法要做的事情，源码如下所示：
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java#7215
@@ -340,7 +342,7 @@ private final boolean attachApplicationLocked(IApplicationThread thread,
 }
 ```
 
-10. 上面说到的`thread#bindApplication` 中的这个 `thread` 是来自于 `ActivityThread#mAppThread`，其类型是 `ApplicationThread`，是 `ActivityThread` 的一个内部类，继承自 `IApplicationThread.Stub`，我们来查看 `ApplicationThread#bindApplication`，发现最后调用了 `ActivityThread#sendMessage` 方法，它内部调用了 `mH.sendMessage` 来发送消息，`mH` 是 `ActivityThread` 的内部类 `H` 的一个实例，查看 `H#handleMessage` 来查看它是怎么处理发送过来的消息，其最终走到了 `ActivityThread#handleBindApplication`。
+### 10. 上面说到的`thread#bindApplication` 中的这个 `thread` 是来自于 `ActivityThread#mAppThread`，其类型是 `ApplicationThread`，是 `ActivityThread` 的一个内部类，继承自 `IApplicationThread.Stub`，我们来查看 `ApplicationThread#bindApplication`，发现最后调用了 `ActivityThread#sendMessage` 方法，它内部调用了 `mH.sendMessage` 来发送消息，`mH` 是 `ActivityThread` 的内部类 `H` 的一个实例，查看 `H#handleMessage` 来查看它是怎么处理发送过来的消息，其最终走到了 `ActivityThread#handleBindApplication`。
 
 在源码中我们可以发现它先创建 `mInstrumentation` 对象，调用 `data#info#makeApplication` 来创建 `Application` 对象，其对象 `data#info` 为 `LoadedApk` 的一个实例，查看 `LoadedApk#makeApplication` 中代码可以发现，其调用了 `Instrumentation#newApplication` 方法，内部靠 `Class#newInstance()` 完成对 `Application` 实例化，然后调用 `Application#attach(context)` 来绑定 `Context`。
 
@@ -491,7 +493,7 @@ static public Application newApplication(Class<?> clazz, Context context)
 }
 ```
 
-11. 说完了 9 中的 `thread#bindApplication`，下面我们继续说 `mStackSupervisor#attachApplicationLocked`，其 `mStackSupervisor` 是 `ActivityStackSupervisor` 的一个实例，我们查看 `ActivityStackSupervisor#attachApplicationLocked` 方法中发现会调用 `ActivityStackSupervisor#realStartActivityLocked`，其方法会调用 `app#thread#scheduleLaunchActivity`，源码如下所示：
+### 11. 说完了 9 中的 `thread#bindApplication`，下面我们继续说 `mStackSupervisor#attachApplicationLocked`，其 `mStackSupervisor` 是 `ActivityStackSupervisor` 的一个实例，我们查看 `ActivityStackSupervisor#attachApplicationLocked` 方法中发现会调用 `ActivityStackSupervisor#realStartActivityLocked`，其方法会调用 `app#thread#scheduleLaunchActivity`，源码如下所示：
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/services/core/java/com/android/server/am/ActivityStackSupervisor.java#956
@@ -522,7 +524,7 @@ final boolean realStartActivityLocked(ActivityRecord r, ProcessRecord app,
 }
 ```
 
-12. 上面说到的 `app#thread#scheduleLaunchActivity` 中的 `thread` 是前面提到过的 `IApplicationThread`，它的实现类是 `ActivityThread#ApplicationThread` ，我们查看 `ActivityThread#ApplicationThread#scheduleLaunchActivity` 中的代码发现最终是发送 `LAUNCH_ACTIVITY` 消息，这步我们在第 10 步中有过分析，我们直接查看其处理消息相关代码即可，在 `H#handleMessage` 中，我们可以看到其会接收并处理很多和四大组件相关的操作，我们查看对 `LAUNCH_ACTIVITY` 的处理，发现对其处理的方法是 `ActivityThread#handleLaunchActivity`，它调用到了 `ActivityThread#performLaunchActivity` 方法，其中的实现再次涉及到了 `Instrumentation` 类，之前是在创建 `Application` 对象用到了它，如今是创建 `Activity` 对象又用到了它，其 `Instrumentation#newActivity` 也是通过 `Class.newInstance()` 来实例化 `Activity`，实例化结束后回到 `ActivityThread#performLaunchActivity` 中来让 `activity` 依附到 window 中，然后`callActivityOnCreate` 走 `Activity` 的 `onCreate` 生命周期，涉及到的源码如下所示：
+### 12. 上面说到的 `app#thread#scheduleLaunchActivity` 中的 `thread` 是前面提到过的 `IApplicationThread`，它的实现类是 `ActivityThread#ApplicationThread` ，我们查看 `ActivityThread#ApplicationThread#scheduleLaunchActivity` 中的代码发现最终是发送 `LAUNCH_ACTIVITY` 消息，这步我们在第 10 步中有过分析，我们直接查看其处理消息相关代码即可，在 `H#handleMessage` 中，我们可以看到其会接收并处理很多和四大组件相关的操作，我们查看对 `LAUNCH_ACTIVITY` 的处理，发现对其处理的方法是 `ActivityThread#handleLaunchActivity`，它调用到了 `ActivityThread#performLaunchActivity` 方法，其中的实现再次涉及到了 `Instrumentation` 类，之前是在创建 `Application` 对象用到了它，如今是创建 `Activity` 对象又用到了它，其 `Instrumentation#newActivity` 也是通过 `Class.newInstance()` 来实例化 `Activity`，实例化结束后回到 `ActivityThread#performLaunchActivity` 中来让 `activity` 依附到 window 中，然后`callActivityOnCreate` 走 `Activity` 的 `onCreate` 生命周期，涉及到的源码如下所示：
 
 ```java
 // http://androidxref.com/8.1.0_r33/xref/frameworks/base/core/java/android/app/ActivityThread.java#756
