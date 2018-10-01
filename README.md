@@ -100,27 +100,27 @@
 
 
 
-[Blankj]:https://github.com/Blankj
-[AndroidTraveler]:https://github.com/nesger
+[Blankj]: https://github.com/Blankj
+[AndroidTraveler]: https://github.com/nesger
 
 <!-- 1.1 -->
 [LeetCode 题解]: https://github.com/Blankj/awesome-java-leetcode
 
 <!-- 1.2 -->
-[TCP 与 UDP 的区别]: https://github.com/Blankj/AndroidOfferKiller/blob/master/net/TCP%20%E4%B8%8E%20UDP%20%E7%9A%84%E5%8C%BA%E5%88%AB.md
+[TCP 与 UDP 的区别]: ./net/TCP%20与%20UDP%20的区别.md
 
 <!-- 2 -->
 
 <!-- 3 -->
-[运行时数据区域]:https://github.com/Blankj/AndroidOfferKiller/blob/master/jvm/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md
+[运行时数据区域]: ./jvm/运行时数据区域.md
 
 <!-- 4 -->
-[App 启动过程（含 Activity 启动过程）]: https://github.com/Blankj/AndroidOfferKiller/blob/30d48a03d792679ce25718aee1d0ea6d22325fdd/android/App%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%88%E5%90%AB%20Activity%20%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B%EF%BC%89.md
-[RecyclerView 性能优化]: https://github.com/Blankj/AndroidOfferKiller/blob/cff6e99919e5212981a8e5169c54e0de233bd021/android/RecyclerView%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md
+[App 启动过程（含 Activity 启动过程）]: ./android/App%20启动过程（含%20Activity%20启动过程）.md
+[RecyclerView 性能优化]: ./android/RecyclerView%20性能优化.md
 
 <!-- 5 -->
-[单例模式]: https://blankj.com/2016/04/21/really-use-singleton
-[责任链模式]: ./design-patterns/责任链模式妙用.md
+[单例模式]: ./design-patterns/单例模式.md
+[责任链模式]: ./design-patterns/责任链模式.md
 
 <!-- 6 -->
 
