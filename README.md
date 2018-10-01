@@ -107,7 +107,7 @@
 [LeetCode 题解]: https://github.com/Blankj/awesome-java-leetcode
 
 <!-- 1.2 -->
-[TCP 与 UDP 的区别]: ./net/TCP%20与%20UDP%20的区别.md
+[TCP 与 UDP 的区别]: ./net/TCP 与 UDP 的区别.md
 
 <!-- 2 -->
 [线程池]: ./java/线程池.md
@@ -116,8 +116,8 @@
 [运行时数据区域]: ./jvm/运行时数据区域.md
 
 <!-- 4 -->
-[App 启动过程（含 Activity 启动过程）]: ./android/App%20启动过程（含%20Activity%20启动过程）.md
-[RecyclerView 性能优化]: ./android/RecyclerView%20性能优化.md
+[App 启动过程（含 Activity 启动过程）]: ./android/App 启动过程（含 Activity 启动过程）.md
+[RecyclerView 性能优化]: ./android/RecyclerView 性能优化.md
 
 <!-- 5 -->
 [单例模式]: ./design-patterns/单例模式.md
