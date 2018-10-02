@@ -124,7 +124,7 @@
 [责任链模式]: ./design-patterns/责任链模式.md
 
 <!-- 6 -->
-[你最大的缺点是什么]: ./hr/你最大的缺点是什么.md
+[你的缺点是什么]: ./hr/你的缺点是什么.md
 
 <!-- 7 -->
 [技术人员的 Markdown 简历]: https://github.com/Blankj/resume
