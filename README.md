@@ -92,7 +92,8 @@
 
 | Company                      |Position                      | Email                          |
 | :--------------------------- |:---------------------------- | :----------------------------- |
-| [阿里巴巴][阿里巴巴]            | [阿里巴巴职位][阿里巴巴职位]     | jj.cmj@antfin.com             |
+| [字节跳动][字节跳动]            | [字节跳动职位][字节跳动职位]     | blankj@qq.com                  |
+| [阿里巴巴][阿里巴巴]            | [阿里巴巴职位][阿里巴巴职位]     | blankj@qq.com                  |
 | [51 信用卡][51 信用卡]         | [51 信用卡职位][51 信用卡职位]   | blankj@qq.com                 |
 | [二维火][二维火]               | [二维火职位][二维火职位]         | blankj@qq.com                 |
 | [亿咖通科技][亿咖通科技]        | [亿咖通科技职位][亿咖通科技职位]   | blankj@qq.com                 |
@@ -134,6 +135,8 @@
 [阿里巴巴面经记]: https://blankj.com/2018/09/26/alibaba-interview
 
 <!-- 9 -->
+[字节跳动]: https://job.bytedance.com
+[字节跳动职位]: https://job.bytedance.com/society
 [阿里巴巴]: https://www.alibabagroup.com
 [阿里巴巴职位]: https://job.alibaba.com/zhaopin/index.htm
 [51 信用卡]: https://www.u51.com
