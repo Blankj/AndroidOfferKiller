@@ -24,8 +24,19 @@ public class SearchEditText extends EditText {
     private static final long LIMIT = 1000;
 
     private OnTextChangedListener mListener;
-    private int                   mDelayCount;// 延迟判断的个数
     private String                mStartText = "";// 记录开始输入前的文本内容
+    private Runnable              mAction    = new Runnable() {
+        @Override
+        public void run() {
+            if (mListener != null) {
+                // 判断最终和开始前是否一致
+                if (!StringUtils.equals(mStartText, getText().toString())) {
+                    mStartText = getText().toString();// 更新 mStartText
+                    mListener.onTextChanged(mStartText);
+                }
+            }
+        }
+    };
 
     public SearchEditText(Context context) {
         super(context);
@@ -49,21 +60,15 @@ public class SearchEditText extends EditText {
     @Override
     protected void onTextChanged(final CharSequence text, int start, int lengthBefore, int lengthAfter) {
         super.onTextChanged(text, start, lengthBefore, lengthAfter);
-        mDelayCount++;
-        postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mDelayCount--;
-                // 判断是否已停止输入了
-                if (mDelayCount == 0 && mListener != null) {
-                    // 判断最终和开始前是否一致
-                    if (!StringUtils.equals(mStartText, getText().toString())) {
-                        mStartText = getText().toString();// 更新 mStartText
-                        mListener.onTextChanged(mStartText);
-                    }
-                }
-            }
-        }, LIMIT);
+        // 移除上一次的回调
+        removeCallbacks(mAction);
+        postDelayed(mAction, LIMIT);
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        removeCallbacks(mAction);
     }
 
     public interface OnTextChangedListener {
