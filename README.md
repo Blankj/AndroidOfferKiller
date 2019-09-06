@@ -56,6 +56,7 @@
 | :--------------------------------------- | :--------------------------------------- |
 | [App 启动过程（含 Activity 启动过程）][App 启动过程（含 Activity 启动过程）]| [Blankj][Blankj]|
 | [RecyclerView 性能优化][RecyclerView 性能优化]| [Blankj][Blankj]|
+| [EditText 搜索优化][EditText 搜索优化]        | [Blankj][Blankj]|
 
 
 ### 5 设计模式
@@ -125,6 +126,7 @@
 <!-- 4 -->
 [App 启动过程（含 Activity 启动过程）]: ./android/App%20启动过程（含%20Activity%20启动过程）.md
 [RecyclerView 性能优化]: ./android/RecyclerView%20性能优化.md
+[EditText 搜索优化]: ./android/EditText%20搜索优化.md
 
 <!-- 5 -->
 [单例模式]: ./design-patterns/单例模式.md
