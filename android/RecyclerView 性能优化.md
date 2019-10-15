@@ -15,14 +15,14 @@ mTextView.setText(Html.fromHtml(data).toString());
 
 ## 数据优化
 
-分页拉取远端数据，对拉取下来的远端数据进行缓存，提升二次加载速度；对于新增或者删除数据通过 `DiffUtil` 来进行局部刷新数据，而不是一味地全局刷新数据。
+分页拉取远端数据，对拉取下来的远端数据进行缓存，提升二次加载速度；对于新增或者删除数据通过 `DiffUtil` 来进行局部刷新数据，而不是一味全局地刷新数据。
 
 
 ## 布局优化
 
 ### 减少过渡绘制
 
-减少布局层级，例如使用 `ConstraintLayout`或者用一个自定义 View 来代替 ItemView。
+减少布局层级，可以考虑使用自定义 View 来减少层级，或者更合理地设置布局来减少层级，不推荐在 RecyclerView 中使用 `ConstraintLayout`，有很多开发者已经反映了使用它效果更差，相关链接有：[Is ConstraintLayout that slow?](https://www.reddit.com/r/androiddev/comments/7ylbz3/is_constraintlayout_that_slow/)、[constraintlayout 1.1.1 not work well in listview](https://issuetracker.google.com/issues/112000722)。
 
 
 ### 减少 xml 文件 inflate 时间
