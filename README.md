@@ -65,7 +65,7 @@
 | :--------------------------------------- | :--------------------------------------- |
 | [单例模式][单例模式]                        | [Blankj][Blankj]                         |
 | [责任链模式][责任链模式]                     | [AndroidTraveler][AndroidTraveler]       |
-
+| [模板方法模式][模板方法模式]                     | [安卓小煜][安卓小煜]       |
 
 ### 6 HR 面试
 
@@ -110,6 +110,7 @@
 
 [Blankj]: https://github.com/Blankj
 [AndroidTraveler]: https://github.com/nesger
+[安卓小煜]: https://github.com/nesger
 
 <!-- 1.1 -->
 [LeetCode 题解]: https://github.com/Blankj/awesome-java-leetcode
@@ -131,6 +132,7 @@
 <!-- 5 -->
 [单例模式]: ./design-patterns/单例模式.md
 [责任链模式]: ./design-patterns/责任链模式.md
+[模板方法模式]: ./design-patterns/模板方法模式.md
 
 <!-- 6 -->
 [你的缺点是什么]: ./hr/你的缺点是什么.md
@@ -155,3 +157,7 @@
 [亿咖通科技职位]: http://ecarx.gllue.com/portal/socialposition
 [大疆]: https://www.dji.com/cn
 [大疆职位]:https://we.dji.com/zh-CN
+
+
+
+
