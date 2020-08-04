@@ -28,6 +28,7 @@
 | Title                                    | Author                                   |
 | :--------------------------------------- | :--------------------------------------- |
 | [LeetCode 题解][LeetCode 题解]            |  [Blankj][Blankj]                         |
+| [fucking-algorithm][fucking-algorithm]   |  [labuladong][labuladong]                |
 
 
 #### 1.2 操作系统
@@ -102,14 +103,9 @@
 
 ### 9 内推通道
 
-| Company                      |Position                      | Email                          |
-| :--------------------------- |:---------------------------- | :----------------------------- |
-| [字节跳动][字节跳动]            | [字节跳动职位][字节跳动职位]     | blankj@qq.com                  |
-| [阿里巴巴][阿里巴巴]            | [阿里巴巴职位][阿里巴巴职位]     | blankj@qq.com                  |
-| [51 信用卡][51 信用卡]         | [51 信用卡职位][51 信用卡职位]   | blankj@qq.com                 |
-| [二维火][二维火]               | [二维火职位][二维火职位]         | blankj@qq.com                 |
-| [亿咖通科技][亿咖通科技]        | [亿咖通科技职位][亿咖通科技职位]   | blankj@qq.com                 |
-| [深圳市大疆创新科技有限公司][大疆]| [大疆职位][大疆职位]             | 553838510@qq.com              |
+| Company                      |Position                        |
+| :--------------------------- |:------------------------------ |
+| [字节跳动][字节跳动]            | [字节跳动靠谱内推][字节跳动靠谱内推]|
 
 
 ## 打个小广告
@@ -123,6 +119,7 @@
 [AndroidTraveler]: https://github.com/nesger
 [安卓小煜]: https://github.com/nesger
 [Omooo]: https://github.com/Omooo
+[labuladong]: https://github.com/labuladong
 
 <!-- 1.1 -->
 [LeetCode 题解]: https://github.com/Blankj/awesome-java-leetcode
@@ -164,17 +161,7 @@
 
 <!-- 9 -->
 [字节跳动]: https://job.bytedance.com
-[字节跳动职位]: https://job.bytedance.com/society
-[阿里巴巴]: https://www.alibabagroup.com
-[阿里巴巴职位]: https://job.alibaba.com/zhaopin/index.htm
-[51 信用卡]: https://www.u51.com
-[51 信用卡职位]: https://social.u51.com/apply/u51
-[二维火]: https://www.2dfire.com
-[二维火职位]: https://www.lagou.com/gongsi/j22013.html 
-[亿咖通科技]: http://www.ecarx.com.cn
-[亿咖通科技职位]: http://ecarx.gllue.com/portal/socialposition
-[大疆]: https://www.dji.com/cn
-[大疆职位]:https://we.dji.com/zh-CN
+[字节跳动职位]: https://blankj.com/2020/05/19/welcome-bytedance/
 
 
 
