@@ -159,7 +159,7 @@
 
 <!-- 9 -->
 [字节跳动]: https://job.bytedance.com
-[字节跳动职位]: https://blankj.com/2020/05/19/welcome-bytedance/
+[字节跳动靠谱内推]: https://bytedance.feishu.cn/docs/
 
 
 
