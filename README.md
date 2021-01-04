@@ -121,6 +121,7 @@
 
 <!-- 1.1 -->
 [LeetCode 题解]: https://github.com/Blankj/awesome-java-leetcode
+[fucking-algorithm]: https://github.com/labuladong/fucking-algorithm
 
 <!-- 1.2 -->
 [进程和线程的区别]: ./base/os/进程和线程的区别.md
